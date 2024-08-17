@@ -1,0 +1,33 @@
+{% extends 'films/layout.html' %}
+{% load static %}
+
+    {% block title %}
+        Отзывы о фильмах
+    {% endblock %}
+    {% block content %}
+
+<h1>Мнения зрителей о фильмах</h1><hr>
+        <h4>Вы так же можете оставить свой отзыв о любом фильме
+            <a class="btn btn-info" href="{% url 'posts' %}" >здесь</a>
+        </h4><br>
+    <main class="container mt-4">
+        <!-- Карточки -->
+        <section class="row mb-4">
+            {% if reviews %}
+            {% for post in reviews %}
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ post.title }}</h5>
+                        <p class="card-text">{{ post.synopsis }}</p>
+                        <p class="card-text">{{ post.review }}</p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+            {% else %}
+            <h4>Здесь может быть Ваш отзыв</h4>
+            {% endif %}
+        </section>
+    </main>
+    {% endblock %}

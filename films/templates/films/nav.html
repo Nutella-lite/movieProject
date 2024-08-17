@@ -1,0 +1,18 @@
+{% load static %}
+
+<!-- Вертикальная навигация -->
+<div class="d-flex">
+    <aside class="navigation">
+        <div class="list-group">
+            <a href="/" class="list-group-item list-group-item-action {% if active_page == 'index' %}active{% endif %}">
+                Отзывы о фильмах
+            </a>
+            <a href="{% url 'posts' %}" class="list-group-item list-group-item-action {% if active_page == 'posts' %}active{% endif %}">
+                Разместите свой отзыв
+            </a>
+        </div>
+        <div class="poster-wrapper">
+            <img src="{% static 'films/img/posters.png' %}" alt="Movie Posters" class="img-fluid poster">
+        </div>
+    </aside>
+</div>

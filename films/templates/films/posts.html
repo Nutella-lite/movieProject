@@ -1,0 +1,39 @@
+{% extends 'films/layout.html' %}
+{% load static %}
+
+    {% block title %}
+        Отзывы о фильмах
+    {% endblock %}
+
+    {% block content %}
+
+<h2>
+    {% if current_hour >= 4 and current_hour < 10 %}
+        Доброе утро!
+    {% elif current_hour >= 10 and current_hour < 17 %}
+        Добрый день!
+    {% elif current_hour >= 17 and current_hour < 23 %}
+        Добрый вечер!
+    {% else %}
+        Доброй ночи!
+    {% endif %}
+</h2>
+<hr>
+    <div>
+        <h5>Заполните поля формы, чтобы разместить свой отзыв</h5>
+        <form method="post">
+            {% csrf_token %}
+            <div class="form-group">
+                {{ form.title }}
+            </div>
+            <div class="form-group">
+                {{ form.synopsis }}
+            </div>
+            <div class="form-group">
+                {{ form.review }}
+            </div>
+            <button type="submit" class="btn btn-info">Разместить</button>
+        </form>
+    </div>
+
+    {% endblock %}

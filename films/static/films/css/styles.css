@@ -1,0 +1,42 @@
+html body {
+    background-color: #000000;
+    color: Aqua;
+    font-family: Arial Narrow, serif;
+}
+
+a {
+    color: Aquamarine;
+}
+aside.navigation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.list-group {
+    flex-shrink: 0;
+    background-color: #000000;
+    color: Aqua;
+    font-family: Arial Narrow, serif;
+}
+
+.poster-wrapper {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    overflow: hidden;
+}
+
+.poster {
+    width: 100%;
+    object-fit: cover;
+}
+
+main {
+    margin-left: 220px; /* Добавляем отступ слева, немного больше ширины панели */
+}
